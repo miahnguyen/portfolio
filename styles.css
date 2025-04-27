@@ -19,6 +19,13 @@ header {
   margin: 0;
   font-size: 1.2rem;
   font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+.name a{
+  text-decoration: none;
+  color: black;
 }
 
 nav ul {
@@ -50,7 +57,7 @@ nav a {
 
 .handwritten {
   font-family: 'Caveat', cursive;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 .profile-pic {
@@ -70,12 +77,13 @@ nav a {
 
 
 .intro-text h2 {
-  font-size: 1.6rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
 .intro-text p {
   max-width: 600px;
+  font-size: 1.2rem;
   line-height: 1.5;
 }
 
@@ -108,12 +116,29 @@ nav a {
   max-width: 1200px;
 }
 
-footer {
-  text-align: center;
+/* footer {
   padding: 20px;
   color: #000000; 
   font-size: 20px;
   margin-top: 40px; 
+} */
+
+footer {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;          
+  padding: 30px 40px;   
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;         
+}
+
+footer p {
+  font-size: 20px;             
+  margin: 0;                   
 }
 
 .project-card {
@@ -185,4 +210,95 @@ footer {
   font-size: 0.9rem;
   color: #000000;
   margin-top: 0.3rem;
+}
+
+.fun-intro {
+  text-align: center;
+  padding: 2rem;
+}
+
+.fun-intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.fun-intro p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 1px solid black;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover, .close:hover {
+  color: #f1f1f1;
 }
